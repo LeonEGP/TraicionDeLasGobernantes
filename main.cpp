@@ -100,7 +100,7 @@ void nReinas(int n) { //Complejidad Computacional: O(n!), siendo n el tamaño de
         imprimirTablero(tablero); //Complejidad Computacional: O(n).
     }
     else {
-        cout << "No se logra encontrar alguna solucion!!!" << endl;
+        cout << "No se logra encontrar solucion alguna!!!" << endl;
     }
 
 }
