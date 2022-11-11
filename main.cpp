@@ -1,4 +1,4 @@
-//Programa que: Implementa un algoritmo solución para el Problema: "N Reynas", mediante BackTracking y Poda Pesada.
+//Programa que: Implementa un algoritmo solución para el Problema: "N Reinas", mediante BackTracking y Poda Pesada.
 //Programadores: León Emiliano García Pérez [A00573074], Carla Morales López [A01639225].
 //Fecha de entrega: Viernes 11 de Noviembre de 2022.
 
@@ -38,7 +38,7 @@ void imprimirTablero(vector<vector <int>> tablero) { //Complejidad Computacional
 
 }
 
-//Función que verifica si es seguro, comprobando si existe una Reyna en la fila actual, o en la diagonal izquierda o en la diagonal derecha, recibe el entero n que es representantivo de las dimensiones del tablero (nxn), un entero fila y tres vectores de booleanos que son las filas, diagonales izquierdas y diagonales derechas. Retorna false si existe otra Reyna, retorna true si no existe otra Reyna.
+//Función que verifica si es seguro, comprobando si existe una Reyna en la fila actual, o en la diagonal izquierda o en la diagonal derecha, recibe el entero n que es representantivo de las dimensiones del tablero (nxn), un entero fila y tres vectores de booleanos que son las filas, diagonales izquierdas y diagonales derechas. Retorna false si existe otra Reina, retorna true si no existe otra Reina.
 bool esSeguro(int n, int fila, int columna, vector<bool>filas, vector<bool>diagonalesIzquierda, vector<bool>diagonalesDerecha) { //Complejidad Computacional: O(1), es una ejecución lineal en el contenido de la función.
     
     if (filas[fila] == true || diagonalesIzquierda[fila+columna] == true || diagonalesDerecha[columna-fila+n-1] == true) {
@@ -50,8 +50,8 @@ bool esSeguro(int n, int fila, int columna, vector<bool>filas, vector<bool>diago
 
 }
 
-//Función que posiciona las Reynas en el tablero, recibe un vector de vectores de enteros (matriz) referenciado, un entero columna y tres vectores de booleanos que son las filas, diagonales izquierdas y diagonales derechas. Retorna true si se logra realizar el acomodo de las Reynas, si no, retorna false.
-bool posicionarReynas(vector<vector <int>>& tablero, int columna, vector<bool> filas, vector<bool>diagonalesIzquierda, vector<bool>diagonalesDerecha) { //Complejidad Computacional: O(n!), siendo n el tamaño del tablero (Considerando el tamaño como: nxn).
+//Función que posiciona las Reynas en el tablero, recibe un vector de vectores de enteros (matriz) referenciado, un entero columna y tres vectores de booleanos que son las filas, diagonales izquierdas y diagonales derechas. Retorna true si se logra realizar el acomodo de las Reinas, si no, retorna false.
+bool posicionarReinas(vector<vector <int>>& tablero, int columna, vector<bool> filas, vector<bool>diagonalesIzquierda, vector<bool>diagonalesDerecha) { //Complejidad Computacional: O(n!), siendo n el tamaño del tablero (Considerando el tamaño como: nxn).
 
     int n;
     n = tablero.size();
@@ -69,7 +69,7 @@ bool posicionarReynas(vector<vector <int>>& tablero, int columna, vector<bool> f
             diagonalesDerecha[columna-i+n-1] = true;
             tablero[i][columna] = 1;
 
-            if (posicionarReynas(tablero, columna + 1, filas, diagonalesIzquierda, diagonalesDerecha) == true) {
+            if (posicionarReinas(tablero, columna + 1, filas, diagonalesIzquierda, diagonalesDerecha) == true) {
                 return true;
             }
 
@@ -85,15 +85,15 @@ bool posicionarReynas(vector<vector <int>>& tablero, int columna, vector<bool> f
     return false;
 }
 
-//Función que crea un tablero y lo soluciona, en torno al problema de N Reynas, recibe un entero n, que es las dimensiones del tablero (nxn), no tiene valor de retorno.
-void nReynas(int n) { //Complejidad Computacional: O(n!), siendo n el tamaño del tablero (Considerando el tamaño como: nxn).
+//Función que crea un tablero y lo soluciona, en torno al problema de N Reinas, recibe un entero n, que es las dimensiones del tablero (nxn), no tiene valor de retorno.
+void nReinas(int n) { //Complejidad Computacional: O(n!), siendo n el tamaño del tablero (Considerando el tamaño como: nxn).
 
     vector<vector <int>> tablero (n, vector<int> (n, 0));
     vector<bool> filas (n, false);
     vector<bool> diagonalesIzquierda (2*n-1, false);
     vector<bool> diagonalesDerecha (2*n-1, false);
 
-    bool respuesta = posicionarReynas(tablero, 0, filas, diagonalesIzquierda, diagonalesDerecha); //Complejidad Computacional: O(n!).
+    bool respuesta = posicionarReinas(tablero, 0, filas, diagonalesIzquierda, diagonalesDerecha); //Complejidad Computacional: O(n!).
 
 
     if (respuesta == true) {
@@ -106,7 +106,7 @@ void nReynas(int n) { //Complejidad Computacional: O(n!), siendo n el tamaño de
 }
 
 //Función main que ejecuta el programa, no recibe parámetros, retorna un entero [return 0].
-int main() { //Complejidad Computacional: O(1), es una ejecución lineal en el contenido de la función. Dentro de esa ejecución, la función nReynas, tiene una Complejidad Computacional: O(n!), siendo n el tamaño del tablero (Considerando el tamaño como: nxn).
+int main() { //Complejidad Computacional: O(1), es una ejecución lineal en el contenido de la función. Dentro de esa ejecución, la función nReinas, tiene una Complejidad Computacional: O(n!), siendo n el tamaño del tablero (Considerando el tamaño como: nxn).
 
     int n;
 
@@ -116,7 +116,7 @@ int main() { //Complejidad Computacional: O(1), es una ejecución lineal en el c
     espacio();
 
     cout << "Output: " << endl;
-    nReynas(n); //Complejidad Computacional: O(n!).
+    nReinas(n); //Complejidad Computacional: O(n!).
 
     espacio();
 
