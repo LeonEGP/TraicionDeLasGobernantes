@@ -18,9 +18,21 @@ void espacio() { //Complejidad Computacional: O(1), es una ejecución lineal en 
 void imprimirTablero(vector<vector <int>> tablero) { //Complejidad Computacional: O(n), siendo n cada elemento en la matriz. (Se realiza mediante un ciclo for anidado dentro de otro ciclo for, que permite tomar cada elemento de la matriz).
 
     for (int i = 0; i < tablero.size(); i++) {
+
+        cout << "{ ";
+
         for (int j = 0; j < tablero[i].size(); j++) {
-            cout << tablero[i][j] << " ";
+
+            if (j+1 == tablero[i].size()){
+                cout << tablero[i][j] << " ";
+            } else {
+                cout << tablero[i][j] << ", ";
+            }
+ 
         }
+
+        cout << "}";
+
         espacio();
     }
 
