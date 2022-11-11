@@ -15,7 +15,7 @@ void espacio() { //Complejidad Computacional: O(1), es una ejecución lineal en 
 }
 
 //Función que imprimie en consola un tablero (matriz). Recibe una matriz, en forma de vector de vectores de interos, no tiene valor de retorno. 
-void imprimirTablero(vector<vector <int>> tablero) { //Complejidad Computacional: O(n), siendo n cada elemento en la matriz. (Se realiza mediante un ciclo for anidado dentro de otro ciclo for, que permite tomar cada elemento de la matriz).
+void imprimirTablero(vector<vector <int>> tablero) { //Complejidad Computacional: O(n), siendo n cada elemento en el vector de vectores de enteros. (Se realiza mediante un ciclo for anidado dentro de otro ciclo for, que permite tomar cada elemento de la matriz).
 
     for (int i = 0; i < tablero.size(); i++) {
 
