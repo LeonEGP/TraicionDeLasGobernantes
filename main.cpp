@@ -1,4 +1,4 @@
-//Programa que: Implementa un algoritmo solución para el Problema: "N Reynas", mediante BackTracking y Poda.
+//Programa que: Implementa un algoritmo solución para el Problema: "N Reynas", mediante BackTracking y Poda Pesada.
 //Programadores: León Emiliano García Pérez [A00573074], Carla Morales López [A01639225].
 //Fecha de entrega: Viernes 11 de Noviembre de 2022.
 
