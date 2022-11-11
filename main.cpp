@@ -122,9 +122,3 @@ int main() { //Complejidad Computacional: O(1), es una ejecución lineal en el c
 
     return 0;
 }
-
-/*
-Referncias: 
-    https://www.geeksforgeeks.org/n-queen-problem-using-branch-and-bound/
-    https://iq.opengenus.org/8-queens-problem-using-branch-and-bound/ 
-*/
